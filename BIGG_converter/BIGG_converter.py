@@ -13,7 +13,7 @@ HEADER = ['Species', 'Source', 'Type', 'Gene type', 'ID', 'Name', 'Full name', '
 def converter(organism, input, output):
     data = json.load(input)
     genes = data['genes']
-    # Do not import gnees with no name
+    # Do not import genes with no name
     genes = [g for g in genes if g['name']]
     str_buffer = StringIO()
     writer = csv.writer(str_buffer, dialect='excel-tab')
